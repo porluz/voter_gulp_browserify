@@ -8,7 +8,12 @@ export default class AppContainer extends React.Component {
         /* jscs: disable */
         return (
             <div>
-                <Feed />
+                <div className="jumbotron text-center">
+                    <h2>Voter</h2>
+                </div>
+                <div>
+                    <Feed />
+                </div>
             </div>
         );
         /* jshint ignore:end */
