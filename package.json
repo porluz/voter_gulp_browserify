@@ -1,8 +1,8 @@
 {
-  "name": "ReactBoilerplate",
+  "name": "Voter",
   "version": "1.0.0",
   "description": "Simple react boilerplate using babel, browserify, less, karma, jasmine and gulp",
-  "author": "r.warpecha@gmail.com",
+  "author": "anthony.olivence@gmail.com",
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^4.1.8",
