@@ -17,15 +17,27 @@ export default class Feed extends React.Component {
       { id: 3, title: 'Coffee makes me anxious', description:'Drink responsibly', voteCount:15}
     ];
     var formDisplayed = false;
+    this.state = { items : list, formDisplayed: formDisplayed };
+
+    // bind functions to this, once.
     this.onToggleForm = this.onToggleForm.bind(this);
     this.onVote = this.onVote.bind(this);
-    this.state = { items : list, formDisplayed: formDisplayed };
+    this.onNewItem = this.onNewItem.bind(this);
 
   }
 
   onToggleForm() {
     this.setState({
       formDisplayed: !this.state.formDisplayed
+    });
+  }
+
+  onNewItem(newItem) {
+    newItem.id = this.state.items.length + 1;
+    var newItems = this.state.items.concat([newItem]);
+    this.setState({
+      formDisplayed: false,
+      items: newItems
     });
   }
 
@@ -53,7 +65,8 @@ export default class Feed extends React.Component {
           />
         </div>
 
-        <FeedForm />
+        <FeedForm displayed={this.state.formDisplayed}
+                  onNewItem={this.onNewItem}/>
 
         <br />
         <br />

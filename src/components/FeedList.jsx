@@ -15,6 +15,7 @@ export default class FeedList extends React.Component {
 
     var feedItems = this.props.items.map(function(item) {
       return <FeedItem  id={item.id}
+                        key={item.id}
                         title={item.title}
                         description = {item.description}
                         voteCount={item.voteCount}

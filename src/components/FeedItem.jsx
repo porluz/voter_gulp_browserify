@@ -34,10 +34,11 @@ export default class FeedItem extends React.Component {
 
   render() {
     var vc = this.props.voteCount;
-
+    var posNegClassName = this.props.voteCount >= 0 ? 'label label-pill label-success'
+                                                      :'label label-pill label-danger';
     return (
       <li key={this.props.key} className="list-group-item">
-        <span className="label label-pill label-success pull-right">{vc}</span>
+        <span className={posNegClassName} pull-right>{vc}</span>
         <h4>{this.props.title}</h4>
         <span>{this.props.description}</span>
         <span className="pull-right">
